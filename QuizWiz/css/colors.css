@@ -1,0 +1,42 @@
+body{
+	margin:0;
+    overflow-x:hidden;
+}
+
+:root{
+	--backgroundColorLight: white;
+    --backgroundColorDark: black;
+    --backgroundColorScrollbarLight: rgb(97 97 97);
+    --backgroundColorScrollbarLightHover: rgb(55 55 55);
+}
+
+/*Larghezza scrollbar*/
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Parte in cui non è presente 
+::-webkit-scrollbar-track {
+    background: rgba(190, 190, 190, 0.386); 
+}*/
+
+/* Parte in cui c'è */
+::-webkit-scrollbar-thumb {
+    background: var(--backgroundColorScrollbarLight);
+}
+
+::-webkit-scrollbar-thumb:hover { 
+    background: var(--backgroundColorScrollbarLightHover); 
+}
+footer {
+  	width: 100vw;
+    height: 2.5vh;
+    text-align: center;
+    background-color: green;
+    padding: 20px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+

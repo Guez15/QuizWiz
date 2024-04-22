@@ -1,0 +1,14 @@
+#wrapper{
+	display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+#pres{
+    background-color:black;
+    width:100vw;
+    height: 100vh;
+}
+
+#content{
+	flex:1;
+}
