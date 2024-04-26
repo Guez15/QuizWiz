@@ -51,11 +51,11 @@
 	}catch(Exception $ex){
         echo $ex->getMessage()."<br>";
         print_r($_POST);
-        //header("Location: ../signUp.php?errore/".$ex->getMessage());
+        header("Location: ../signUp.php?errore/".$ex->getMessage());
         die();
     }catch(PDOException $ex){
         echo $ex->getMessage();
         print_r($_POST);
-        //header("Location: ../signUp.php?errore/".$ex->getMessage());
+        header("Location: ../signUp.php?errore/".$ex->getMessage());
         die();
     }

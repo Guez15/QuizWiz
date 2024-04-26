@@ -9,7 +9,7 @@
       	}else
           	throw new Exception("Accesso richiesto");
     }catch(Exception $ex){
-    	header("Location: logIn.php");
+    	header("Location: logIn.php?".$ex->getMessage());
         die();
     }
 ?>

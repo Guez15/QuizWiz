@@ -1,7 +1,7 @@
 <?php 
 //Login
 	require_once("connect.php");
-    require_once("functions.php");
+    include_once("functions.php");
     session_start();
 
     try{
@@ -20,15 +20,20 @@
                       $row = $sql->fetch();
                       //Confronto la password inserita con la password hashata nel database
                       if(password_verify($passw,$row["pass"])){
-                          $_SESSION['accesso'] = true;
+                          
                           
                           $token = generaToken($email,$passw);
                           $sql = $pdo->prepare("UPDATE utenti SET token=:tk WHERE id=:id");
                           $sql->bindParam(":tk",$token,PDO::PARAM_STR);
                           $sql->bindParam(":id",$row['id'],PDO::PARAM_INT);
                           if($sql->execute()){
-                          	invioMail($email,$token);
-                            header("Location: ../2FA.php");
+                          	if(!invioMail($email,$token))
+                            	throw new Exception("Errore nell'invio della mail");
+                            else{
+                            	$_SESSION['accesso'] = true;
+                                $_SESSION['utente'] = $row['id'];
+                            	header("Location: ../2FA.php");
+							}
                             exit(); 
                           }	else
                             	throw new Excpetion("Invio mail fallito");
