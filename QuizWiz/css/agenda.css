@@ -1,0 +1,22 @@
+#calendar{
+    width: 50%;
+    margin: auto;
+    background-color: #ffd829;
+    padding: 3%;
+    border-radius: 20px; 
+}
+.custom-confirm-button {
+    background-color: #1d79f2 !important;
+    border-color: #1b51f2 !important;
+}
+.fc-prev-button, .fc-next-button, .fc-today-button {
+	background-color: #1d79f2;
+    color: #ffff;
+}
+.fc-prev-button:hover, .fc-next-button:hover, .fc-today-button:hover {
+	background-color: #22a2f2;
+}
+
+.fc-widget-content {
+    border: 5px solid red;
+}
