@@ -1,0 +1,101 @@
+body#log {
+  overflow: hidden;
+  background: radial-gradient(circle, #A1CAF1, #B2DFFB 40%, #FFFFFF 80%, #B2DFFB);
+  background-size: 200% 200%;
+  animation: gradientAnimation 7s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 20% 20%;
+  }
+  50% {
+    background-position: 80% 80%;
+  }
+  100% {
+    background-position: 20% 20%;
+  }
+}
+/*Div principale*/
+#rettangolo {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 350px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+#rettangolo2 {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  height: 450px;
+  width: 500px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.input {
+  width: 100%;
+  max-width: 220px;
+  height: 45px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1.5px solid lightgrey;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0px 0px 20px -18px;
+}
+.input:hover,.input2:hover,.perFile:hover {
+  border: 2px solid lightgrey;
+  box-shadow: 0px 0px 20px -17px;
+}
+
+.input:active,.input2::active,.perFile:active {
+  transform: scale(0.95);
+}
+
+.input:focus,.input2:focus,.perFile:focus {
+  border: 2px solid grey;
+}
+
+.input2{
+	width: 50%;
+  	max-width: 160px;
+  	height: 34px;
+  	padding: 7px;
+  	border-radius: 12px;
+  	border: 1.5px solid lightgrey;
+  	outline: none;
+  	transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  	box-shadow: 0px 0px 20px -18px;
+    margin: 3px;
+}
+
+/*Bottone*/
+#entra {
+  padding: 12.5px 30px;
+  border: 0;
+  border-radius: 100px;
+  background-color: #2ba8fb;
+  color: #ffffff;
+  font-weight: bold;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}        
+#entra:hover {
+  background-color: #6fc5ff;
+  box-shadow: 0 0 20px #6fc5ff50;
+  transform: scale(1.1);
+}
+
+#entra:active {
+  background-color: #3d94cf;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+  box-shadow: none;
+  transform: scale(0.98);
+}
