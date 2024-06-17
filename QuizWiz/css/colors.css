@@ -1,38 +1,54 @@
-body{
-	margin:0;
-    overflow-x:hidden;
+
+:root {
+    --backgroundColorScrollbar: rgb(97, 97, 97);
+    --backgroundColorScrollbarHover: rgb(55, 55, 55);
+    --bluScuro: #1b51f2;
+    --blu: #1d79f2;
+    --azzurro: #22a2f2;
+    --gialloChiaro: #fce26a;
+    --giallo: #ffd829;
+    --gialloScuro: #a09600;
+    --rosaChiaro: #f5c9e5;
+    --rosa: #efa5d5;
+    --rosaScuro: #b6739f;
+    --bianco: #F2f2f2;
+    --arancioChiaro: #f5b873;
+    --arancio: #Faa13c;
+    --arancioScuro: #be7a2d;
+    --verdinoChiaro: #a0f59d;
+    --verdino: #7be677;
+    --verdinoScuro: #5ba958;
+    --rossoChiaro: #f27066;
+    --rosso: #f05346;
+    --rossoScuro: #be4338;
 }
 
-:root{
-	--backgroundColorLight: white;
-    --backgroundColorDark: black;
-    --backgroundColorScrollbarLight: rgb(97 97 97);
-    --backgroundColorScrollbarLightHover: rgb(55 55 55);
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background-color: var(--bianco);
+    font-family: Arial, sans-serif;
 }
 
-/*Larghezza scrollbar*/
+/* Larghezza scrollbar */
 ::-webkit-scrollbar {
     width: 5px;
 }
 
-/* Parte in cui non è presente 
-::-webkit-scrollbar-track {
-    background: rgba(190, 190, 190, 0.386); 
-}*/
-
 /* Parte in cui c'è */
 ::-webkit-scrollbar-thumb {
-    background: var(--backgroundColorScrollbarLight);
+    background: var(--backgroundColorScrollbar);
 }
 
-::-webkit-scrollbar-thumb:hover { 
-    background: var(--backgroundColorScrollbarLightHover); 
+::-webkit-scrollbar-thumb:hover {
+    background: var(--backgroundColorScrollbarHover);
 }
+
 footer {
-  	width: 100vw;
+    width: 100vw;
     height: 2.5vh;
     text-align: center;
-    background-color: green;
+    background-color: var(--bluScuro);
     padding: 20px;
     display: flex;
     align-content: center;
@@ -40,3 +56,54 @@ footer {
     flex-wrap: wrap;
 }
 
+a:active, a:hover, a:link, a:visited {
+    color: var(--blu);
+    text-decoration: none;
+}
+
+/* Menu Verticale */
+#menuVerticale {
+    width: 10vw;
+    background-color: var(--blu);
+    color: white;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#menuVerticale .menu-items {
+    flex: 1;
+}
+
+#menuVerticale p {
+    margin: 0;
+    border-bottom: 1px solid var(--azzurro);
+    text-align: center;
+}
+
+#menuVerticale a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+#menuVerticale a:hover {
+    background-color: var(--azzurro);
+}
+
+#menuVerticale img {
+    max-width: 40px;
+    padding:25px;
+    height: auto;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
