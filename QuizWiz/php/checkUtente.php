@@ -20,23 +20,18 @@
                       $row = $sql->fetch();
                       //Confronto la password inserita con la password hashata nel database
                       if(password_verify($passw,$row["pass"])){
-                          
-                          
                           $token = generaToken($email,$passw);
-                          $sql = $pdo->prepare("UPDATE utenti SET token=:tk WHERE id=:id");
+                          $sql = $pdo->prepare("UPDATE utenti SET token=:tk, tokenUsato=false WHERE id=:id");
                           $sql->bindParam(":tk",$token,PDO::PARAM_STR);
                           $sql->bindParam(":id",$row['id'],PDO::PARAM_INT);
                           if($sql->execute()){
                           	if(!invioMail($email,$token))
                             	throw new Exception("Errore nell'invio della mail");
-                            else{
-                            	$_SESSION['accesso'] = true;
-                                $_SESSION['utente'] = $row['id'];
-                            	header("Location: ../2FA.php");
-							}
+                            else
+                            	header("Location: ../2FA.html");
                             exit(); 
                           }	else
-                            	throw new Excpetion("Invio mail fallito");
+                            	throw new Exception("Invio mail fallito");
                         }else
                           throw new Exception("Password errata");
                   }
@@ -53,10 +48,10 @@
     //Gestione errori
 	}catch(Exception $ex){
         echo $ex->getMessage();
-        header("Location: ../logIn.php?errore/".$ex->getMessage());
+        header("Location: ../logIn.php?errore=".$ex->getMessage());
         die();
     }catch(PDOException $ex){
         echo $ex->getMessage();
-        header("Location: ../logIn.php?errore/".$ex->getMessage());
+        header("Location: ../logIn.php?errore=".$ex->getMessage());
         die();
-    }
+    }
