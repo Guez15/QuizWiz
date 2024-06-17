@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     log_to_file("Received topic: " . $argomento);
     log_to_file("Received difficulty: " . $diff);
 
-    $api_key = 'sk-proj-16sTSp8rHELcG48z4Hv7T3BlbkFJDmXHQDRzLaWnswfAT4uP';
+    $api_key = '';
     $model = 'gpt-3.5-turbo';
     $url = 'https://api.openai.com/v1/chat/completions';
 
