@@ -6,6 +6,7 @@ const text = ["Esplora la nostra accurata selezione di eventi, appuntamenti e at
               "Accedi a un'ampia gamma di annotazioni precedentemente caricate, offrendoti uno spazio comodo per rivedere e organizzare il tuo lavoro.",
               "Scegli il tuo argomento di interesse e il livello di difficolt\u00E0 delle domande che ti verranno proposte. Mettiti alla prova rispondendo con attenzione e precisione, una domanda alla volta."
              ];
+const links = ["agenda","areaUtente","community","note","archivio","sceltaQuiz"];
 window.onload = ()=>{
   creaSezioni();
 };
@@ -13,11 +14,11 @@ window.onload = ()=>{
 function creaSezioni(){
   let code = "";
   for(let i = 0;i<arg.length;i++){
-      code += "<section id='sezione"+i+"'>\
-      <div class='colSx'></div>\
+      code += "<a href='"+links[i]+".php'><section id='sezione"+i+"'>\
+      <div class='colSx' style='background-image:url(img/"+links[i]+".png)'></div>\
       <div class='colDx'><h3>"+arg[i]+"</h3><p>"+text[i]+"</p></div>\
-      </section>";
+      </section></a>";
 	}
-  $("#pres").after(code);
+  $("#sections").append(code);
 }
         
