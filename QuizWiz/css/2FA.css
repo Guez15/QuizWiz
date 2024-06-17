@@ -1,0 +1,57 @@
+
+h2{
+            font-family: sans-serif;
+            font-size:50px;
+            text-align: center;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;    
+            overflow: hidden;
+            background: radial-gradient(circle, #A1CAF1, #B2DFFB 40%, #FFFFFF 80%, #B2DFFB);
+            background-size: 200% 200%;
+            animation: gradientAnimation 7s linear infinite;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 20% 20%;
+            }
+            50% {
+                background-position: 80% 80%;
+            }
+            100% {
+                background-position: 20% 20%;
+            }
+        }
+
+        div{
+            width:75vw;
+            height: 50vh;
+            border-radius:45px;
+            background-color: #ededed;
+            padding:20px;
+            box-shadow:0 0 20px 3px #6b6b6b;
+        }
+        p{
+            color:#6b6b6b;
+            font-family:sans-serif;
+            font-size:18px;
+			padding: 0 70px;
+        }
+        a>p{
+            width: fit-content;
+            margin: auto;
+            font-size: 25px;
+        }
+        a:hover>p:hover{
+            scale:1.1;
+        }
+        a:link,a:active,a:visited{
+            text-decoration:none;
+        }
