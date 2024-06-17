@@ -1,0 +1,171 @@
+body{
+  overflow: hidden;
+  background: radial-gradient(circle, #A1CAF1, #B2DFFB 40%, #FFFFFF 80%, #B2DFFB);
+  background-size: 200% 200%;
+  animation: gradientAnimation 7s linear infinite;
+  margin: 0;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 20% 20%;
+  }
+  50% {
+    background-position: 80% 80%;
+  }
+  100% {
+    background-position: 20% 20%;
+  }
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+  height: 80%;
+  border: 2px solid var(--bluScuro);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background-color: var(--bianco);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 2px solid var(--bluScuro);
+  background-color: var(--bluScuro);
+  color: var(--bianco);
+}
+
+.header .logo {
+  width: 50px;
+  height: 50px;
+  background-image: url("../img/logo.png");
+  background-size:contain;
+  border-radius: 50%;
+}
+
+.header .title {
+  font-size: 1.5rem;
+  text-align: center;
+  flex-grow: 1;
+  margin-right: 50px;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+}
+
+.carousel, .form-section {
+  flex: 1;
+  padding: 20px;
+}
+
+.carousel {
+  flex: 0.4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: var(--azzurro);
+  border-right: 2px solid var(--bluScuro);
+  border-radius: 0 10px 10px 0;
+}
+
+.carousel img {
+  max-width: 100%;
+  height: auto;
+  display: none;
+  border-radius: 10px;
+}
+
+.carousel img.active {
+  display: block;
+}
+
+.carousel p {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  color: var(--bianco);
+}
+
+.carousel .arrow {
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: var(--bluScuro);
+  color: var(--bianco);
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+}
+a.fotoNote{
+	width:160px;
+}
+
+.carousel .arrow.left {
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+.carousel .arrow.right {
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.form-section {
+  flex: 0.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--bianco);
+  padding: 40px;
+  border-radius: 0 10px 10px 0;
+}
+
+.form-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-section label, .form-section select, .form-section input {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: var(--bluScuro);
+}
+
+.form-section select, .form-section input {
+  padding: 10px;
+  border: 2px solid var(--bluScuro);
+  border-radius: 5px;
+}
+
+.form-section button {
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: var(--bluScuro);
+  color: var(--bianco);
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.form-section button:hover {
+  background-color: var(--blu);
+}
